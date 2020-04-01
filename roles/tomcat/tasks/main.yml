@@ -1,0 +1,16 @@
+---
+# tasks file for tomcat
+    - name: verify if tomcat is installed
+      package:
+        name: tomcat
+        update_cache: yes
+        state: latest
+    - name: verify if tomcat is running
+      service:
+        name: tomcat
+        state: started
+    - name: moving webpage to tomcat dir
+      copy:
+        src: /vagrant/ROOT
+        dest: /var/lib/tomcat/webapps/
+        

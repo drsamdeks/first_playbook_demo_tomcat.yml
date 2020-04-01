@@ -1,0 +1,11 @@
+---
+# tasks file for postgress
+- name: verify if mySQL repo is installed
+  yum: 
+    name:  http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+    update_cache: yes
+    state: latest
+- name: install mySQL
+  yum:
+    name: mysql-server
+    state: latest    
